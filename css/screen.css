@@ -75,6 +75,16 @@
   --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
   --global-input-focus-borderColor: var(--global-color-alpha);
   --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+
+  --global-page-color: var(--global-color-neutral-xxxx-dark);
+  --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-page-color: White;
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
+  }
 }
 
 /*------------------------------------*\
@@ -92,9 +102,17 @@ html {
   font-family: 'Inter Web', Helvetica, arial, sans-serif;
   color: var(--global-color-neutral-xxxx-dark);
   background-color: var(--global-color-neutral-xxxx-light);
+
+  color: var(--global-page-color);
+  background-color: var(--global-page-backgroundColor);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  color: var(--global-page-color);
+  background-color: var(--global-page-backgroundColor);
 }
 
 *,
@@ -524,15 +542,23 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-  fill: var(--global-color-neutral-xxxx-dark);
+  fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
 }
 
 .c-logo__path--2 {
-  fill: var(--global-color-alpha);
+  fill: var(--logo__path--2--fill, var(--global-color-alpha));
 }
 
 .c-logo__path--3 {
-  fill: var(--global-color-alpha-x-dark);
+  fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
+}
+
+@media (prefers-color-scheme: dark) {
+  .c-logo {
+    --logo__path--1--fill: White;
+    --logo__path--2--fill: var(--logo__path--1--fill);
+    --logo__path--3--fill: var(--logo__path--1--fill);
+  }
 }
 
 /*
@@ -547,6 +573,12 @@ input::placeholder {
   border-radius: var(--global-borderRadius);
   box-shadow: 0 0 0 var(--global-borderWidth) rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.075);
   overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .c-card {
+    background-color: var(--global-color-neutral-xxx-dark);
+  }
 }
 
 /* Add padding to child for more flexibility */
@@ -619,6 +651,14 @@ input::placeholder {
     var(--global-whitespace-md);
   outline: none;
   transition: border var(--global-transitionTiming-alpha);
+}
+
+@media (prefers-color-scheme: dark) {
+  .c-input {
+    background-color: var(--global-color-neutral-xxxx-dark);
+    color: white;
+    border-color: var(--global-color-neutral-xxxx-dark);
+  }
 }
 
 .c-input:hover {
@@ -694,7 +734,6 @@ input::placeholder {
 
 .c-option--hidden:focus + .c-label .c-custom-option__fake-input {
   border-color: var(--custom-option-focus-borderColor);
-  box-shadow: var(--global-input-boxShadow);
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
@@ -721,6 +760,12 @@ input::placeholder {
   padding-bottom: var(--global-whitespace-xs);
   line-height: calc(var(--global-baseline) * 2);
   color: var(--global-color-neutral-xx-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  .c-label {
+    color: var(--global-color-neutral-x-light);
+  }
 }
 
 .c-label--option {
@@ -778,6 +823,13 @@ input::placeholder {
   border-radius: calc(var(--global-baseline) * 3);
   margin-right: var(--global-whitespace-sm);
   background-color: var(--global-color-neutral-xxxx-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .c-custom-option__fake-input {
+    background-color: var(--global-color-neutral-xxxx-dark);
+    border-color: var(--global-color-neutral-xxxx-dark);
+  }
 }
 
 .c-custom-toggle__fake-input::after {
