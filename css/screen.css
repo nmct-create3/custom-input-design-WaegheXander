@@ -23,8 +23,7 @@
   --global-color-alpha-h: 216deg;
   --global-color-alpha-s: 100%;
   --global-color-alpha-l: 60%;
-  --global-color-alpha-hsl: var(--global-color-alpha-h) var(--global-color-alpha-s)
-    var(--global-color-alpha-l);
+  --global-color-alpha-hsl: var(--global-color-alpha-h) var(--global-color-alpha-s) var(--global-color-alpha-l);
   --global-color-alpha: hsl(var(--global-color-alpha-hsl));
   --global-color-alpha-light: hsl(var(--global-color-alpha-h) 100% 65%);
   --global-color-alpha-dark: hsl(var(--global-color-alpha-h) 80% 55%);
@@ -647,8 +646,7 @@ input::placeholder {
   font-family: inherit;
   font-size: 16px;
   line-height: calc(var(--global-baseline) * 3);
-  padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth))
-    var(--global-whitespace-md);
+  padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
   outline: none;
   transition: border var(--global-transitionTiming-alpha);
 }
@@ -785,8 +783,7 @@ input::placeholder {
   border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
   background-color: var(--global-color-alpha);
   color: #fff;
-  padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth))
-    var(--global-whitespace-md);
+  padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
   line-height: calc(var(--global-baseline) * 3);
   width: 100%;
   outline: none;
